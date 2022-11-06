@@ -25,6 +25,14 @@ class ProductController extends Controller
         ]);
     }
 
+    public function index()
+    {
+        return view('admin.product.list',[
+            'title' => 'Danh sách sản phẩm',
+            'products' => $this->productAdminService->get()
+        ]);
+    }
+
     public function store(ProductRequest $request)
     {
         $this->productAdminService->insert($request);
