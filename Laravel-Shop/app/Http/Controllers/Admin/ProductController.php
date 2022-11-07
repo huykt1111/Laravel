@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Services\Product\ProductAdminService;
 use Illuminate\Http\JsonResponse;
 use App\Http\Requests\Product\ProductRequest;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -40,25 +41,40 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('admin.product.edit',[
+            'title' => 'Chỉnh sửa sản phẩm',
+            'product' => $product,
+            'menus' => $this->productAdminService->getMenu()
+        ]);
     }
-
-    
-    public function edit($id)
-    {
-        //
-    }
-
    
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $result = $this->productAdminService->update($request,$product);
+
+        if($result)
+        {
+            return redirect('/admin/products/list');
+        }
+        
+        return redirect()->back();
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $result = $this->productAdminService->delete($request);
+        if($result)
+        {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xóa thành công sản phẩm'
+            ]);
+        }
+
+        return response()->json([
+            'error' => true
+        ]);
     }
 }
