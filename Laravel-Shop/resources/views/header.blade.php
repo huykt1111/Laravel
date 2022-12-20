@@ -6,7 +6,7 @@
             <nav class="limiter-menu-desktop container">
                 
                 <!-- Logo desktop -->		
-                <a href="#" class="logo">
+                <a href="/" class="logo">
                     <img src="/template/images/icons/logo-01.png" alt="IMG-LOGO">
                 </a>
 
@@ -14,13 +14,17 @@
                 <div class="menu-desktop">
                     <ul class="main-menu">
                         <li class="active-menu">
-                            <a href="">Trang chủ</a>
+                            <a href="/">Trang chủ</a>
                         </li>
 
                         {!! $menusHtml !!}
 
                         <li>
                             <a href="contact.html">Liên hệ</a>
+                        </li>
+
+                        <li>
+                            <a href="/admin/users/login">Đăng xuất</a>
                         </li>
                     </ul>
                 </div>	
@@ -85,6 +89,10 @@
             
             <li>
                 <a href="contact.html">Liên hệ</a>
+            </li>
+
+            <li>
+                <a href="/admin/users/login">Đăng xuất</a>
             </li>
         </ul>
     </div>
