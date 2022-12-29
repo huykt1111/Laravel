@@ -1,5 +1,9 @@
 <header>
     @php $menusHtml = \App\Helpers\Helper::menus($menus); @endphp
+    @php
+        if(is_null(\Illuminate\Support\Facades\Session::get('carts'))) { $productQuantity = 0; } 
+        else $productQuantity = count(\Illuminate\Support\Facades\Session::get('carts'));                 
+    @endphp
     <!-- Header desktop -->
     <div class="container-menu-desktop">
         <div class="wrap-menu-desktop">
@@ -55,18 +59,20 @@
 
                 <!-- Icon header -->
                 <div class="wrap-icon-header flex-w flex-r-m">
+                    @auth
                     <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
                         <i class="zmdi zmdi-search"></i>
                     </div>
 
                     <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" 
-                        data-notify="{{ count(\Illuminate\Support\Facades\Session::get('carts')) }}">
+                        data-notify="{{ $productQuantity }}">
                         <i class="zmdi zmdi-shopping-cart"></i>
                     </div>
 
                     <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
                         <i class="zmdi zmdi-favorite-outline"></i>
                     </a>
+                    @endauth
                 </div>
             </nav>
         </div>	
@@ -81,18 +87,20 @@
 
         <!-- Icon header -->
         <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+            
+            @auth
             <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
                 <i class="zmdi zmdi-search"></i>
             </div>
-
             <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" 
-                data-notify="{{ count(\Illuminate\Support\Facades\Session::get('carts')) }}">
+                data-notify="{{ $productQuantity }}">
                 <i class="zmdi zmdi-shopping-cart"></i>
             </div>
 
             <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
                 <i class="zmdi zmdi-favorite-outline"></i>
             </a> 
+            @endauth
         </div>
 
         <!-- Button show menu -->
