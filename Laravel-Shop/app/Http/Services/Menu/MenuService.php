@@ -19,7 +19,7 @@ class MenuService
 
     public function show()
     {
-        return Menu::select('name','id')
+        return Menu::select('name','id','thumb')
         ->where('parent_id',0)
         ->orderbyDesc('id')->get();
     }
@@ -32,6 +32,7 @@ class MenuService
                 'parent_id' => (int) $request->input('parent_id'),
                 'description' => (string) $request->input('description'),
                 'content' => (string) $request->input('content'),
+                'thumb' => (string) $request->input('thumb'),
                 'active' => (string) $request->input('active')
             ]);
 
@@ -62,6 +63,7 @@ class MenuService
         $menu->name = (string) $request->input('name');
         $menu->description = (string) $request->input('description');
         $menu->content = (string) $request->input('content');
+        $menu->thumb = (string) $request->input('thumb');
         $menu->active = (string) $request->input('active');
         $menu->save();
 

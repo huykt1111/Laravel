@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 29, 2022 lúc 03:37 AM
+-- Thời gian đã tạo: Th12 29, 2022 lúc 07:57 AM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.1.0
 
@@ -124,24 +124,25 @@ CREATE TABLE `menus` (
   `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `active` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `thumb` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `menus`
 --
 
-INSERT INTO `menus` (`id`, `name`, `parent_id`, `description`, `content`, `active`, `created_at`, `updated_at`) VALUES
-(11, 'Rau củ quả', 0, '', '', 1, '2022-12-28 04:36:37', '2022-12-28 04:36:37'),
-(14, 'Thịt', 0, '', '', 1, '2022-12-28 04:37:28', '2022-12-28 04:51:07'),
-(15, 'Đồ ngọt', 0, '', '', 1, '2022-12-28 04:38:55', '2022-12-28 04:51:15'),
-(17, 'Trái cây', 11, '', '', 1, '2022-12-28 04:48:36', '2022-12-28 04:48:36'),
-(18, 'Rau củ', 11, '', '', 1, '2022-12-28 04:48:51', '2022-12-28 04:48:51'),
-(19, 'Bánh kẹo', 15, '', '', 1, '2022-12-28 04:52:07', '2022-12-28 04:52:07'),
-(20, 'Đồ uống', 15, '', '', 1, '2022-12-28 04:52:16', '2022-12-28 04:52:16'),
-(21, 'Hải sản', 14, '', '', 1, '2022-12-28 04:52:35', '2022-12-28 04:52:35'),
-(22, 'Gia súc', 14, '', '', 1, '2022-12-28 04:52:46', '2022-12-28 04:52:46'),
-(23, 'Gia cầm', 14, '', '', 1, '2022-12-28 04:52:54', '2022-12-28 04:52:54');
+INSERT INTO `menus` (`id`, `name`, `parent_id`, `description`, `content`, `active`, `created_at`, `updated_at`, `thumb`) VALUES
+(11, 'Rau củ quả', 0, '', '', 1, '2022-12-28 04:36:37', '2022-12-28 23:34:28', '/storage/uploads/2022/12/29/icon6.png'),
+(14, 'Thịt', 0, '', '', 1, '2022-12-28 04:37:28', '2022-12-28 23:33:45', '/storage/uploads/2022/12/29/icon9.png'),
+(15, 'Đồ ngọt', 0, '', '', 1, '2022-12-28 04:38:55', '2022-12-28 23:32:41', '/storage/uploads/2022/12/29/icon3.png'),
+(17, 'Trái cây', 11, '', '', 1, '2022-12-28 04:48:36', '2022-12-28 04:48:36', ''),
+(18, 'Rau củ', 11, '', '', 1, '2022-12-28 04:48:51', '2022-12-28 04:48:51', ''),
+(19, 'Bánh kẹo', 15, '', '', 1, '2022-12-28 04:52:07', '2022-12-28 04:52:07', ''),
+(20, 'Đồ uống', 15, '', '', 1, '2022-12-28 04:52:16', '2022-12-28 04:52:16', ''),
+(21, 'Hải sản', 14, '', '', 1, '2022-12-28 04:52:35', '2022-12-28 04:52:35', ''),
+(22, 'Gia súc', 14, '', '', 1, '2022-12-28 04:52:46', '2022-12-28 04:52:46', ''),
+(23, 'Gia cầm', 14, '', '', 1, '2022-12-28 04:52:54', '2022-12-28 04:52:54', '');
 
 -- --------------------------------------------------------
 
@@ -170,7 +171,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2022_11_13_102314_create_customers_table', 5),
 (9, '2022_11_13_102410_create_carts_table', 5),
 (10, '2022_11_13_125940_create_jobs_table', 6),
-(11, '2022_12_28_022634_add_column_user_type_to_table_user', 6);
+(11, '2022_12_28_022634_add_column_user_type_to_table_user', 6),
+(12, '2022_12_29_062207_add_column_thumb_to_table_menu', 7);
 
 -- --------------------------------------------------------
 
@@ -430,7 +432,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`

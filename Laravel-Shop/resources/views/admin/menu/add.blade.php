@@ -34,6 +34,15 @@
         </div>
 
         <div class="form-group">
+            <label for="menu">Ảnh danh mục</label>
+            <input type="file"  class="form-control" id="upload">
+            <div id="image_show">
+
+            </div>
+            <input type="hidden" name="thumb" id="thumb">
+        </div>
+
+        <div class="form-group">
             <label>Kích hoạt</label>
             <div class="custom-control custom-radio">
                 <input class="custom-control-input" value="1" type="radio" id="active" name="active" checked="">

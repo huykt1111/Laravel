@@ -15,6 +15,11 @@ class Helper
                 $html .= '
                 <tr>
                     <td>' . $menu->id . '</td>
+                    <td>
+                        <a href="' . $menu->thumb . '" target="_blank">
+                            <img src="' . $menu->thumb . '" height="40px">
+                        </a>
+                    </td>
                     <td>' . $char . $menu->name . '</td>
                     <td>' . self::active($menu->active) . '</td>
                     <td>' . $menu->updated_at . '</td>

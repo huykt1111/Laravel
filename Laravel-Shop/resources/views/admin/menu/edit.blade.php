@@ -37,6 +37,17 @@
         </div>
 
         <div class="form-group">
+            <label for="menu">Ảnh Sản Phẩm</label>
+            <input type="file"  class="form-control" id="upload">
+            <div id="image_show">
+                <a href="{{ $menu->thumb }}">
+                    <img src="{{ $menu->thumb }}" width="100px">
+                </a>
+            </div>
+            <input type="hidden" name="thumb" value="{{ $menu->thumb }}" id="thumb">
+        </div>
+
+        <div class="form-group">
             <label>Kích hoạt</label>
             <div class="custom-control custom-radio">
                 <input class="custom-control-input" value="1" type="radio" id="active" name="active" {{ $menu->active == 1 ? ' checked = ""' : ''}}>

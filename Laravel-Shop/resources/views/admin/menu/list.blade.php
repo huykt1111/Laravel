@@ -5,6 +5,7 @@
         <thead>
             <tr>
                 <th style="width: 50px">ID</th>
+                <th>Hình ảnh</th>
                 <th>Name</th>
                 <th>Active</th>
                 <th>Update</th>
