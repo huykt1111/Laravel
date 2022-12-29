@@ -24,6 +24,12 @@ class MenuService
         ->orderbyDesc('id')->get();
     }
 
+    public function show1()
+    {
+        return Menu::select('name','id','thumb')
+        ->orderbyDesc('id')->get();
+    }
+
     public function create($request)
     {
         try {

@@ -29,6 +29,7 @@ class MainController extends Controller
            'title' => 'Fresh Food',
            'sliders' => $this->slider->show(),
            'menus' => $this->menu->show(),
+           'menus1' => $this->menu->show1(),
            'products' => $this->product->get()
         ]);
     }

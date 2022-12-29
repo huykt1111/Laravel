@@ -23,7 +23,7 @@
                         <div>
                             <input type="hidden" class="mtext-104 cl3 txt-center num-product" type="number"
                                 name="num_product" value="1">
-                            <span class="price-new">{!!  \App\Helpers\Helper::price($product->price, $product->price_sale)  !!}</span>
+                            <span class="price-new">{!!  \App\Helpers\Helper::price($product->price, $product->price_sale)  !!} Vnđ</span>
                             <button type="submit" class="button-add-product button-add-product btn-add-cart button-add-product--view">Cho vào giỏ</button>
                             <span class="price-old">0đ</span>   
                             <input type="hidden" name="product_id" value="{{ $product->id }}">

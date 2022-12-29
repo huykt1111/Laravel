@@ -43,6 +43,7 @@
             <ul class="slider-list">
                 @foreach($sliders as $slider)
                     <li class="slider-list__item">
+
                         <a href="{{ $slider->url }}">
                             <img src="{{ $slider->thumb }}" alt="">
                         </a>
@@ -52,13 +53,13 @@
         </div>
     </section>
 
-    <!-- Banner -->
-    <div class="sec-banner bg0 p-t-80 p-b-50">
+    <!-- Menus -->
+    <!-- <div class="sec-banner bg0 p-t-80 p-b-50">
         <div class="container">
             <div class="row">
                 @foreach($menus as $menu)
                     <div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-                        <!-- Block1 -->
+                        
                         <div class="block1 wrap-pic-w">
                             <img src="{{ $menu->thumb }}" alt="IMG-BANNER" />
 
@@ -84,7 +85,23 @@
                 @endforeach
             </div>
         </div>
-    </div>
+    </div> -->
+
+    <section id="category">
+        <div class="container">
+            <h2 class="category-title">Danh mục</h2>
+            <div class="category-list">
+                @foreach($menus1 as $menu)
+                    <div class="category-list__item">
+                        <a href="/danh-muc/{{ $menu->id }}-{{ \Str::slug($menu->name, '-') }}.html" class="category-list__item-link">
+                            <img src="{{ $menu->thumb }}" alt="">
+                        </a>
+                        <h3 class="category-item__name">{{ $menu->name }}</h3>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
 
     <!-- Product -->
@@ -92,14 +109,14 @@
         <div class="container">
             <div class="p-b-10">
                 <h3 class="ltext-103 cl5">
-                    Product Overview
+                    Tổng quan về sản phẩm
                 </h3>
             </div>
 
             <div class="flex-w flex-sb-m p-b-52">
                 <div class="flex-w flex-l-m filter-tope-group m-tb-10">
                     <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-                        All Products
+                        Tất cả sản phẩm
                     </button>
                 </div>
             </div>

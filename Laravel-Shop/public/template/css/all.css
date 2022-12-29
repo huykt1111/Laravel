@@ -497,7 +497,7 @@ section#slider button.owl-dot.active {
 }
 .category-list{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .category-list__item {
