@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Services\Slider\SliderService;
 use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Product\ProductService;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class MainController extends Controller
 {
@@ -46,5 +48,17 @@ class MainController extends Controller
         return response()->json([
             'html' => ''
         ]);
+    }
+
+    public function checkUserType(){
+        if (!Auth::user()) {
+            return redirect()->route('login');
+        }
+        if (Auth::user()->userType === 'ADM') {
+            return redirect()->route('admin');
+        }
+        if (Auth::user()->userType === 'USR') {
+            return redirect()->route('user');
+        }
     }
 }

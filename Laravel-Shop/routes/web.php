@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\Users\LoginController;
 use \App\Http\Controllers\MainController;
+use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\Admin\MenuController;
 use \App\Http\Controllers\Admin\ProductController;
 use \App\Http\Controllers\Admin\SliderController;
@@ -55,7 +56,15 @@ Route::middleware(['auth'])->group(function(){
     });
 });
 
-Route::get('/', [MainController::class, 'index']);
+Route::get('register', [UserController::class, 'register'])->name('register');
+Route::post('register', [UserController::class, 'register_action'])->name('register.action');
+Route::get('login', [UserController::class, 'login'])->name('login');
+Route::post('login', [UserController::class, 'login_action'])->name('login.action');
+Route::get('password', [UserController::class, 'password'])->name('password');
+Route::post('password', [UserController::class, 'password_action'])->name('password.action');
+Route::get('logout', [UserController::class, 'logout'])->name('logout');
+
+Route::get('/', [MainController::class, 'index'])->name('home');
 Route::post('/services/load-product', [MainController::class, 'loadProduct']);
 
 Route::get('danh-muc/{id}-{slug}.html',[\App\Http\Controllers\MenuController::class, 'index']);

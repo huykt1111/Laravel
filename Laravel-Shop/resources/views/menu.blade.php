@@ -95,7 +95,7 @@
 
             @include('products.list')
             
-            {!! $products->links() !!}
+            {!! $products->links('pagination::bootstrap-4') !!}
         </div>
     </div>
 @endsection

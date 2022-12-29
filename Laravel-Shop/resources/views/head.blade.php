@@ -27,10 +27,19 @@
 	<link rel="stylesheet" type="text/css" href="/template/vendor/MagnificPopup/magnific-popup.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/template/vendor/perfect-scrollbar/perfect-scrollbar.css">
+	
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+	
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/template/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/template/css/main.css">
 	<link rel="stylesheet" type="text/css" href="/template/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/template/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/template/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/template/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="/template/css/all.css">
 <!--===============================================================================================-->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 

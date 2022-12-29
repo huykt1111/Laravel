@@ -7,7 +7,7 @@
                 
                 <!-- Logo desktop -->		
                 <a href="/" class="logo">
-                    <img src="/template/images/icons/logo-01.png" alt="IMG-LOGO">
+                    <img src="/template/images/logo.webp" alt="IMG-LOGO">
                 </a>
 
                 <!-- Menu desktop -->
@@ -16,16 +16,40 @@
                         <li class="active-menu">
                             <a href="/">Trang chủ</a>
                         </li>
-
+                        
                         {!! $menusHtml !!}
 
                         <li>
                             <a href="contact.html">Liên hệ</a>
                         </li>
-
+                        @auth
                         <li>
-                            <a href="/admin/users/login">Đăng xuất</a>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Xin chào <b>{{ Auth::user()->name }}</b>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ route('password') }}">Thay đổi mật khẩu</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}">Đăng xuất</a>
+                                </div>
+                            </div>
                         </li>
+                        @endauth
+                        @guest
+                        <li>
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Đăng nhập
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ route('login') }}">Đăng nhập</a>
+                                    <a class="dropdown-item" href="{{ route('register') }}">Đăng ký</a>
+                                </div>
+                            </div>
+                        </li>
+                        @endguest
                     </ul>
                 </div>	
 
@@ -35,7 +59,7 @@
                         <i class="zmdi zmdi-search"></i>
                     </div>
 
-                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="0">
                         <i class="zmdi zmdi-shopping-cart"></i>
                     </div>
 
@@ -51,7 +75,7 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->		
         <div class="logo-mobile">
-            <a href="index.html"><img src="/template/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+            <a href="index.html"><img src="/template/images/logo.webp" alt="IMG-LOGO"></a>
         </div>
 
         <!-- Icon header -->
@@ -60,7 +84,7 @@
                 <i class="zmdi zmdi-search"></i>
             </div>
 
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="0">
                 <i class="zmdi zmdi-shopping-cart"></i>
             </div>
 
@@ -91,9 +115,34 @@
                 <a href="contact.html">Liên hệ</a>
             </li>
 
+            @auth
             <li>
-                <a href="/admin/users/login">Đăng xuất</a>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Xin chào <b>{{ Auth::user()->name }}</b>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="{{ route('password') }}">Thay đổi mật khẩu</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}">Đăng xuất</a>
+                    </div>
+                </div>
             </li>
+            @endauth
+            @guest
+            <li>
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Đăng nhập
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="{{ route('login') }}">Đăng nhập</a>
+                        <a class="dropdown-item" href="{{ route('register') }}">Đăng ký</a>
+                    </div>
+                </div>
+            </li>
+            @endguest
         </ul>
     </div>
 
@@ -113,3 +162,4 @@
         </div>
     </div>
 </header>
+
