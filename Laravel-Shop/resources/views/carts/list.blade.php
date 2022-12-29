@@ -140,6 +140,9 @@
             </div>
     </form>
     @else
-        <div class="text-center"><h2>Giỏ hàng trống</h2></div>
+        <div class="empty-cart-item">
+            <img src="/template/images/icon-empty.PNG" alt="">
+            <p style="margin-bottom: 50px;">Không có sản phẩm nào trong giỏ hàng </p>
+        </div>
     @endif
 @endsection

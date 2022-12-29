@@ -188,10 +188,9 @@
 </div>
 <script src="https://sp.zalo.me/plugins/sdk.js"></script>
 
-
-
 <!--===============================================================================================-->	
 <script src="/template/vendor/jquery/jquery-3.2.1.min.js"></script>
+
 <!--===============================================================================================-->
 	<script src="/template/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
@@ -292,4 +291,25 @@
 <!--===============================================================================================-->
 	<script src="/template/js/main.js"></script>
 	<script src="/template/js/public.js"></script>
-	<script src="/template/js/jquery-ui.min.js"></script>
+	<script src="/template/js/owl.carousel.min.js"></script>
+    <script>
+        var $sliderBanner = $('.slider-list')
+        $sliderBanner.owlCarousel({
+            margin:10,
+            loop: true,
+            nav:true,
+            autoplay:true,
+            autoplayTimeout:4000,
+            responsive:{
+                1000:{
+                    items:1
+                },
+                768:{
+                    items:1
+                },
+                500:{
+                    items:1
+                }
+            }
+        });
+    </script>

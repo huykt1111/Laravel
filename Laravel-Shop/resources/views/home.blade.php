@@ -1,8 +1,9 @@
 @extends('main')
 
 @section('content')
+
     <!-- Slider -->
-    <section class="section-slide">
+    <!-- <section class="section-slide">
         <div class="wrap-slick1">
             <div class="slick1">
 
@@ -31,8 +32,23 @@
                             </div>
                         </div>
                     </div>
+                    
                 @endforeach
             </div>
+        </div>
+    </section> -->
+
+    <section id="slider" style="margin-top: 150px;">
+        <div class="container">
+            <ul class="slider-list">
+                @foreach($sliders as $slider)
+                    <li class="slider-list__item">
+                        <a href="{{ $slider->url }}">
+                            <img src="{{ $slider->thumb }}" alt="">
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
         </div>
     </section>
 
