@@ -4,8 +4,20 @@
     <div class="bg0 m-t-23 p-b-140 p-t-80">
         <div class="container">
             <div class="flex-w flex-sb-m p-b-52">
-                <div class="flex-w flex-l-m filter-tope-group m-tb-10">
-                   <h1>{{ $title }}</h1>
+                <div class="break-crumb">
+                    <div class="break-crumb__head">
+                        <div class="home">
+                            <a href="#">
+                                <span>Sản phẩm</span>
+                            </a>
+                                <span class="mr_lr">&nbsp;/ &nbsp;</span>
+                        </div>
+                        <div>
+                            <strong>
+                                <span>{{ $title }}</span>
+                            </strong>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="flex-w flex-c-m m-tb-10">

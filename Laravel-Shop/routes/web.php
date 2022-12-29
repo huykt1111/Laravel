@@ -7,6 +7,7 @@ use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\Admin\MenuController;
 use \App\Http\Controllers\Admin\ProductController;
 use \App\Http\Controllers\Admin\SliderController;
+use \App\Http\Controllers\ContactController;
 
 Route::get('admin/users/login',[LoginController::class, 'index'])->name('login');
 Route::post('admin/users/login/store',[LoginController::class, 'store']);
@@ -75,3 +76,4 @@ Route::get('carts', [App\Http\Controllers\CartController::class, 'show']);
 Route::post('update-cart', [App\Http\Controllers\CartController::class, 'update']);
 Route::get('carts/delete/{id}', [App\Http\Controllers\CartController::class, 'remove']);
 Route::post('carts', [App\Http\Controllers\CartController::class, 'addCart']);
+Route::get('contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
