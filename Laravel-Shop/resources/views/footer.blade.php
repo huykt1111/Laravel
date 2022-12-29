@@ -291,7 +291,9 @@
 <!--===============================================================================================-->
 	<script src="/template/js/main.js"></script>
 	<script src="/template/js/public.js"></script>
+	<script src="/template/js/countdown.js"></script>
 	<script src="/template/js/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         var $sliderBanner = $('.slider-list')
         $sliderBanner.owlCarousel({
@@ -312,4 +314,20 @@
                 }
             }
         });
+    </script>
+    <script>
+        function start() {
+            const timeLeft = JSON.parse(localStorage.getItem('timeLeft'));
+            if(timeLeft==null){
+                localStorage.setItem('timeLeft', JSON.stringify({
+                    d: 7,
+                    h: 0,
+                    m: 0,
+                    s: 0,
+                }))
+            } else {
+                return
+            }
+        }
+        start()
     </script>

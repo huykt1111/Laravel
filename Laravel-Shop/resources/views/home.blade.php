@@ -103,6 +103,69 @@
         </div>
     </section>
 
+    <!-- Deal -->
+    <section id="product-sale">
+    <div class="container">
+        <div class="product-sale-top">
+            <div class="product-sale-text">
+                <a href="">Deal sốc mỗi ngày</a>
+                <p>Sản phẩm giảm giá hỗ trợ khách hàng</p>
+            </div>
+            <div class="product-sale-count">
+                <div class="wrapper-count">
+                    <div class="countdown-block">
+                        <span class="days time-elem">
+                        <span class="top">00</span>
+                        <span class="top-back">
+                            <span>00</span>
+                        </span>
+                        <span class="bottom">00</span>
+                        <span class="bottom-back">
+                            <span>00</span>
+                        </span>
+                        </span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="hours time-elem">
+                        <span class="top">00</span>
+                        <span class="top-back">
+                            <span>00</span>
+                        </span>
+                        <span class="bottom">00</span>
+                        <span class="bottom-back">
+                            <span>00</span>
+                        </span>
+                        </span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="minutes time-elem">
+                        <span class="top">00</span>
+                        <span class="top-back">
+                            <span>00</span>
+                        </span>
+                        <span class="bottom">00</span>
+                        <span class="bottom-back">
+                            <span>00</span>
+                        </span>
+                        </span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="seconds time-elem">
+                        <span class="top">00</span>
+                        <span class="top-back">
+                            <span>00</span>
+                        </span>
+                        <span class="bottom">00</span>
+                        <span class="bottom-back">
+                            <span>00</span>
+                        </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Product -->
     <section class="bg0 p-t-23 p-b-140">
