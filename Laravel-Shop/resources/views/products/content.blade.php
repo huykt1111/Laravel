@@ -1,7 +1,7 @@
 @extends('main')
 @section('content')
     <div class="container p-t-80">
-        <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+        <!-- <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
             <a href="/" class="stext-109 cl8 hov-cl1 trans-04">
                 Home
                 <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
@@ -16,8 +16,26 @@
             <span class="stext-109 cl4">
 				{{ $title }}
 			</span>
+        </div> -->
+
+        <div class="break-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+            <div class="break-crumb__head">
+                <div class="home">
+                    <a href="#">
+                        <span>Trang chủ / {{ $product->menu->name }}</span>
+                    </a>
+                        <span class="mr_lr">&nbsp;/ &nbsp;</span>
+                </div>
+                <div>
+                    <strong>
+                        <span>{{ $title }}</span>
+                    </strong>
+                </div>
+            </div>
         </div>
     </div>
+
+    
 
     <section class="sec-product-detail bg0 p-t-65 p-b-60">
         <div class="container">
@@ -74,9 +92,9 @@
                             {{ $title }}
                         </h4>
 
-                        <span class="mtext-106 cl2">
-							{!! \App\Helpers\Helper::price($product->price, $product->price_sale) !!}
-						</span>
+                        <div class="mtext-106 cl2" style="width: 100%; padding: 20px; background: linear-gradient(100deg, #ed1b36, #f1975f); border-radius: 8px; margin-bottom: 30px;">
+							<span style=" color: #fff; font-weight: 600; font-size: 24px; padding-right: 15px;">{!! \App\Helpers\Helper::price($product->price, $product->price_sale) !!} Vnđ</span>
+						</div>
 
                         <p class="stext-102 cl3 p-t-23">
                             {{ $product->description }}
@@ -103,7 +121,8 @@
 
 
                                             <button type="submit"
-                                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 ">
+                                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"
+                                                    style="background-color: var(--cl-green);">
                                                 Add to cart
                                             </button>
                                             <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -149,16 +168,15 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item p-b-10">
-                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a>
+                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">Mô tả</a>
                         </li>
 
                         <li class="nav-item p-b-10">
-                            <a class="nav-link" data-toggle="tab" href="#information" role="tab">Additional
-                                information</a>
+                            <a class="nav-link" data-toggle="tab" href="#information" role="tab">Thông tin thêm</a>
                         </li>
 
                         <li class="nav-item p-b-10">
-                            <a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews (1)</a>
+                            <a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Nhận xét (1)</a>
                         </li>
                     </ul>
 
@@ -176,55 +194,55 @@
                         <!-- - -->
                         <div class="tab-pane fade" id="information" role="tabpanel">
                             <div class="row">
-                                <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+                                <div class="m-lr-auto">
                                     <ul class="p-lr-28 p-lr-15-sm">
                                         <li class="flex-w flex-t p-b-7">
 											<span class="stext-102 cl3 size-205">
-												Weight
+												Hạn sử dụng
 											</span>
 
-                                            <span class="stext-102 cl6 size-206">
-												0.79 kg
-											</span>
-                                        </li>
-
-                                        <li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Dimensions
-											</span>
-
-                                            <span class="stext-102 cl6 size-206">
-												110 x 33 x 100 cm
+                                            <span class="stext-102 cl6">
+												8 tháng
 											</span>
                                         </li>
 
                                         <li class="flex-w flex-t p-b-7">
 											<span class="stext-102 cl3 size-205">
-												Materials
+												Ngày sản xuất
 											</span>
 
-                                            <span class="stext-102 cl6 size-206">
-												60% cotton
-											</span>
-                                        </li>
-
-                                        <li class="flex-w flex-t p-b-7">
-											<span class="stext-102 cl3 size-205">
-												Color
-											</span>
-
-                                            <span class="stext-102 cl6 size-206">
-												Black, Blue, Grey, Green, Red, White
+                                            <span class="stext-102 cl6">
+												20/12/2022
 											</span>
                                         </li>
 
                                         <li class="flex-w flex-t p-b-7">
 											<span class="stext-102 cl3 size-205">
-												Size
+												Nơi sản xuất
 											</span>
 
-                                            <span class="stext-102 cl6 size-206">
-												XL, L, M, S
+                                            <span class="stext-102 cl6">
+												Việt Nam
+											</span>
+                                        </li>
+
+                                        <li class="flex-w flex-t p-b-7">
+											<span class="stext-102 cl3 size-205">
+												Loại
+											</span>
+
+                                            <span class="stext-102 cl6">
+												Thực phẩm
+											</span>
+                                        </li>
+
+                                        <li class="flex-w flex-t p-b-7">
+											<span class="stext-102 cl3 size-205">
+												Nguồn
+											</span>
+
+                                            <span class="stext-102 cl6">
+												Fresh Food
 											</span>
                                         </li>
                                     </ul>
@@ -334,9 +352,9 @@
 
     <section class="sec-relate-product bg0 p-t-45 p-b-105">
         <div class="container">
-            <div class="p-b-45">
+            <div class="p-b-45">    
                 <h3 class="ltext-106 cl5 txt-center">
-                    Related Products
+                    Những sản phẩm liên quan
                 </h3>
             </div>
 
