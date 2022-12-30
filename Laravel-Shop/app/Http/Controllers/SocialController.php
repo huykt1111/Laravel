@@ -61,7 +61,7 @@ class SocialController extends Controller
         $this->_registerOrLoginUser($user);
 
         // Return home after login
-        return redirect()->intended('/');;
+        return redirect()->intended('/');
     }
 
     protected function _registerOrLoginUser($data)

@@ -56,10 +56,10 @@
                             <span>Hoặc đăng nhập bằng</span>
                         </p>
                         <div class="social-login-account">
-                            <a class="btn" href="#" style="width: 130px; height: 37px; margin-right: 5px; background-color: #3b5998; padding: 10px; border-radius: 0.3rem; color: var(--white) !important;">
+                            <a class="btn" href="{{ route('login.facebook') }}" style="width: 130px; height: 37px; margin-right: 5px; background-color: #3b5998; padding: 10px; border-radius: 0.3rem; color: var(--white) !important;">
                                 <label><i class="fab fa-facebook"></i>&nbsp;Facebook</label>
                             </a> 
-                            <a href="#" class="btn" style="width: 130px; height: 37px; margin-right: 5px; background-color: #e14b33; padding: 10px; border-radius: 0.3rem; color: var(--white) !important;">
+                            <a href="{{ route('login.google') }}" class="btn" style="width: 130px; height: 37px; margin-right: 5px; background-color: #e14b33; padding: 10px; border-radius: 0.3rem; color: var(--white) !important;">
                                 
                                 <label><i class="fab fa-google-plus"></i>&nbsp;Google</label>
                             </a> 
