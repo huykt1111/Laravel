@@ -3,7 +3,7 @@
     <a href="/admin" class="brand-link">
         <img src="/template/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">Fresh Food</span>
     </a>
 
     <!-- Sidebar -->
@@ -14,7 +14,10 @@
                 <img src="/template/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                
+                @auth
+                <a href="#" class="d-block">Xin chào {{ Auth::user()->name }}</a>
+                @endauth
             </div>
         </div>
 
@@ -124,6 +127,31 @@
 
                     </ul>
                 </li>
+
+                @auth
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-user"></i>
+                        <p> Cập nhật tài khoản
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('passwordadm') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thay đổi mật khẩu</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('logout1') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Đăng xuất</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @endauth
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

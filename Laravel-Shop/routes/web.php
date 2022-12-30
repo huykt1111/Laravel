@@ -48,6 +48,11 @@ Route::middleware(['auth'])->group(function(){
             Route::DELETE('destroy',[SliderController::class, 'destroy']);
         });
 
+        
+        Route::get('passwordadm', [UserController::class, 'passwordadm'])->name('passwordadm');
+        Route::post('password', [UserController::class, 'password_action'])->name('password.action');
+        Route::get('logout1', [UserController::class, 'logout1'])->name('logout1');
+
         #Upload
         Route::post('upload/services',[\App\Http\Controllers\Admin\UploadController::class,'store']);
 

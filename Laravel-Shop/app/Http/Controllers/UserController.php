@@ -84,6 +84,13 @@ class UserController extends Controller
          ]);
     }
 
+    public function passwordadm()
+    {
+        return view('admin.users.infoadmin',[
+            'title' => 'Change Password'
+        ]);
+    }
+
     public function password_action(Request $request)
     {
         $request->validate([
@@ -104,6 +111,14 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
+    }
+
+    public function logout1(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login');
     }
 
 }

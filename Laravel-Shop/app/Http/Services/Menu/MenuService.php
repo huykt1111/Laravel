@@ -27,6 +27,7 @@ class MenuService
     public function show1()
     {
         return Menu::select('name','id','thumb')
+        ->where('parent_id','!=',0)
         ->orderbyDesc('id')->get();
     }
 
