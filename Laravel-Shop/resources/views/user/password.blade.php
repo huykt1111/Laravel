@@ -31,19 +31,19 @@
                 @endif
                 <form method="POST" action="{{ route('password.action') }}">
                     @csrf
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <label>Mật khẩu cũ <span class="text-danger">*</span></label>
                         <input class="form-control" type="password" name="old_password" />
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <label>Mật khẩu mới <span class="text-danger">*</span></label>
                         <input class="form-control" type="password" name="new_password" />
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <label>Xác nhận lại mật khẩu <span class="text-danger">*</span></label>
                         <input class="form-control" type="password" name="new_password_confirmation" />
                     </div>
-                    <div class="mb-3" style="display: flex; justify-content: center;">
+                    <div class="mb-4" style="display: flex; justify-content: center;">
                         <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04" style=";background-color: var(--cl-green);">Thay đổi</button>
                     </div>
                 </form>

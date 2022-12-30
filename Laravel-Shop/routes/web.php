@@ -70,6 +70,15 @@ Route::get('password', [UserController::class, 'password'])->name('password');
 Route::post('password', [UserController::class, 'password_action'])->name('password.action');
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
+Route::get('login/google', [\App\Http\Controllers\SocialController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('login/google/callback', [\App\Http\Controllers\SocialController::class, 'handleGoogleCallback']);
+
+Route::get('login/facebook', [\App\Http\Controllers\SocialController::class, 'redirectToFacebook'])->name('login.facebook');
+Route::get('login/facebook/callback', [\App\Http\Controllers\SocialController::class, 'handleFacebookCallback']);
+
+Route::get('login/github', [\App\Http\Controllers\SocialController::class, 'redirectToGithub'])->name('login.github');
+Route::get('login/github/callback', [\App\Http\Controllers\SocialController::class, 'handleGithubCallback']);
+
 Route::get('/', [MainController::class, 'index'])->name('home');
 Route::post('/services/load-product', [MainController::class, 'loadProduct']);
 

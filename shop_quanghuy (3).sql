@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 30, 2022 lúc 04:43 AM
+-- Thời gian đã tạo: Th12 30, 2022 lúc 11:43 AM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.1.0
 
@@ -165,14 +165,15 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2022_11_03_144342_create_menus_table', 2),
-(6, '2022_11_05_091305_create_products_table', 3),
-(7, '2022_11_07_012202_create_sliders_table', 4),
-(8, '2022_11_13_102314_create_customers_table', 5),
-(9, '2022_11_13_102410_create_carts_table', 5),
-(10, '2022_11_13_125940_create_jobs_table', 6),
-(11, '2022_12_28_022634_add_column_user_type_to_table_user', 6),
-(12, '2022_12_29_062207_add_column_thumb_to_table_menu', 7);
+(5, '2022_11_03_144342_create_menus_table', 1),
+(6, '2022_11_05_091305_create_products_table', 1),
+(7, '2022_11_07_012202_create_sliders_table', 1),
+(8, '2022_11_13_102314_create_customers_table', 1),
+(9, '2022_11_13_102410_create_carts_table', 1),
+(10, '2022_11_13_125940_create_jobs_table', 1),
+(11, '2022_12_28_022634_add_column_user_type_to_table_user', 1),
+(12, '2022_12_29_062207_add_column_thumb_to_table_menu', 1),
+(13, '2022_12_30_093818_add_column_provider_avatar_to_table_user', 1);
 
 -- --------------------------------------------------------
 
@@ -301,22 +302,25 @@ CREATE TABLE `users` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `userType` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'USR'
+  `userType` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'USR',
+  `provider_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `userType`) VALUES
-(1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$zN/rwcB7/XXwJSr0nc39aebHXhT8hl0q/PvvuBK0sA518JJILO4wm', NULL, '2022-11-03 12:00:01', '2022-12-29 20:24:30', 'ADM'),
-(2, 'Nguyễn Quang Huy', 'huylmht10@gmail.com', NULL, '$2y$10$eOKj6/zC5Z43U21us5hdwOr8hQxzDJAk3/PIJYMozRyayLiqpE1GC', NULL, '2022-12-27 21:24:28', '2022-12-28 01:04:35', 'USR'),
-(3, 'Pham Van Thien', 'thiendev@gmail.com', NULL, '$2y$10$a29Ku58TSfLVZrm61zOiFu5k..pqvUj5IlrKfpcD3Wx88l1erGKbu', NULL, '2022-12-27 21:52:13', '2022-12-27 21:52:13', 'USR'),
-(4, 'Bùi văn sỹ', 'bvsy', NULL, '$2y$10$LKhTzig29ccuALNPrjTEpOFhfAzEkMjHh2VKX2vfPRcL2kxelEdiK', NULL, '2022-12-28 04:28:11', '2022-12-28 04:28:11', 'USR');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `userType`, `provider_id`, `avatar`) VALUES
+(1, 'Admin', 'admin@gmail.com', NULL, '$2y$10$zN/rwcB7/XXwJSr0nc39aebHXhT8hl0q/PvvuBK0sA518JJILO4wm', NULL, '2022-11-03 12:00:01', '2022-12-29 20:24:30', 'ADM', NULL, NULL),
+(2, 'Nguyễn Quang Huy', 'huylmht10@gmail.com', NULL, '$2y$10$eOKj6/zC5Z43U21us5hdwOr8hQxzDJAk3/PIJYMozRyayLiqpE1GC', NULL, '2022-12-27 21:24:28', '2022-12-28 01:04:35', 'USR', NULL, NULL),
+(3, 'Pham Van Thien', 'thiendev@gmail.com', NULL, '$2y$10$a29Ku58TSfLVZrm61zOiFu5k..pqvUj5IlrKfpcD3Wx88l1erGKbu', NULL, '2022-12-27 21:52:13', '2022-12-27 21:52:13', 'USR', NULL, NULL),
+(4, 'Bùi văn sỹ', 'bvsy', NULL, '$2y$10$LKhTzig29ccuALNPrjTEpOFhfAzEkMjHh2VKX2vfPRcL2kxelEdiK', NULL, '2022-12-28 04:28:11', '2022-12-28 04:28:11', 'USR', NULL, NULL),
+(5, 'Quang Huy', 'huylmht7@gmail.com', NULL, NULL, NULL, '2022-12-30 03:33:56', '2022-12-30 03:33:56', 'USR', '1827828777596375', 'https://graph.facebook.com/v3.3/1827828777596375/picture?type=normal');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -432,7 +436,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
@@ -456,7 +460,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
