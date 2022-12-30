@@ -3,8 +3,7 @@
         
         <div class="col col-lg-3 col-md-6 col-sm-6 col-6 isotope-item women">
             <div class="col-product__item sale-home product-item__sale-off--none">
-                <form action="/add-cart" method="post">
-                    
+                <form action="/add-cart" method="POST">
                     @csrf
                     <div>
                         <a href="">

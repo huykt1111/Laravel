@@ -18,6 +18,18 @@ class ProductService
         ->limit(self::LIMIT)
         ->get();
     }
+
+    public function getGG($page = null)
+    {
+        return Product::select('id','name','price','price_sale','thumb')
+        ->where('price_sale','!=',0)
+        ->orderByDesc('id')
+        ->when($page != null, function($query) use ($page) {
+            $query->offset($page * self::LIMIT);
+        })
+        ->limit(self::LIMIT)
+        ->get();
+    }
     
     public function show($id)
     {

@@ -293,6 +293,7 @@
 	<script src="/template/js/public.js"></script>
 	<script src="/template/js/countdown.js"></script>
 	<script src="/template/js/owl.carousel.min.js"></script>
+	<script src="/template/js/main-wf.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         var $sliderBanner = $('.slider-list')

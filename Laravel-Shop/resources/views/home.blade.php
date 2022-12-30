@@ -103,65 +103,105 @@
         </div>
     </section>
 
-    <!-- Deal -->
+    Deal
     <section id="product-sale">
-    <div class="container">
-        <div class="product-sale-top">
-            <div class="product-sale-text">
-                <a href="">Deal sốc mỗi ngày</a>
-                <p>Sản phẩm giảm giá hỗ trợ khách hàng</p>
-            </div>
-            <div class="product-sale-count">
-                <div class="wrapper-count">
-                    <div class="countdown-block">
-                        <span class="days time-elem">
-                        <span class="top">00</span>
-                        <span class="top-back">
-                            <span>00</span>
-                        </span>
-                        <span class="bottom">00</span>
-                        <span class="bottom-back">
-                            <span>00</span>
-                        </span>
-                        </span>
-                    </div>
-                    <div class="countdown-block">
-                        <span class="hours time-elem">
-                        <span class="top">00</span>
-                        <span class="top-back">
-                            <span>00</span>
-                        </span>
-                        <span class="bottom">00</span>
-                        <span class="bottom-back">
-                            <span>00</span>
-                        </span>
-                        </span>
-                    </div>
-                    <div class="countdown-block">
-                        <span class="minutes time-elem">
-                        <span class="top">00</span>
-                        <span class="top-back">
-                            <span>00</span>
-                        </span>
-                        <span class="bottom">00</span>
-                        <span class="bottom-back">
-                            <span>00</span>
-                        </span>
-                        </span>
-                    </div>
-                    <div class="countdown-block">
-                        <span class="seconds time-elem">
-                        <span class="top">00</span>
-                        <span class="top-back">
-                            <span>00</span>
-                        </span>
-                        <span class="bottom">00</span>
-                        <span class="bottom-back">
-                            <span>00</span>
-                        </span>
-                        </span>
+        <div class="container">
+            <div class="product-sale-top">
+                <div class="product-sale-text">
+                    <a href="">Deal sốc mỗi ngày</a>
+                    <p>Sản phẩm giảm giá hỗ trợ khách hàng</p>
+                </div>
+                <div class="product-sale-count">
+                    <div class="wrapper-count">
+                        <div class="countdown-block">
+                            <span class="days time-elem">
+                            <span class="top">00</span>
+                            <span class="top-back">
+                                <span>00</span>
+                            </span>
+                            <span class="bottom">00</span>
+                            <span class="bottom-back">
+                                <span>00</span>
+                            </span>
+                            </span>
+                        </div>
+                        <div class="countdown-block">
+                            <span class="hours time-elem">
+                            <span class="top">00</span>
+                            <span class="top-back">
+                                <span>00</span>
+                            </span>
+                            <span class="bottom">00</span>
+                            <span class="bottom-back">
+                                <span>00</span>
+                            </span>
+                            </span>
+                        </div>
+                        <div class="countdown-block">
+                            <span class="minutes time-elem">
+                            <span class="top">00</span>
+                            <span class="top-back">
+                                <span>00</span>
+                            </span>
+                            <span class="bottom">00</span>
+                            <span class="bottom-back">
+                                <span>00</span>
+                            </span>
+                            </span>
+                        </div>
+                        <div class="countdown-block">
+                            <span class="seconds time-elem">
+                            <span class="top">00</span>
+                            <span class="top-back">
+                                <span>00</span>
+                            </span>
+                            <span class="bottom">00</span>
+                            <span class="bottom-back">
+                                <span>00</span>
+                            </span>
+                            </span>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="list-product-sale owl-carousel owl-theme" id="product-sale-slider">
+                @foreach($productsGG as $key => $product)
+                    <div class="col-product__item sale-home">
+                        <form action="/add-cart" method="post" >
+                            @csrf
+                            <div>
+                                <div class="product-item__sale-off">
+                                    <span class="home-product-item__percent">Giảm</span>
+                                    <label class ="home-product-item__label" for="">Giá</label>
+                                </div>
+                                <a href="">
+                                    <i data-heart=""  class="icon-heart-element product-item-icon far fa-heart"></i>
+                                </a>
+                            </div>
+                            <div class="product-img">
+                                <a href="/san-pham/{{ $product->id }}-{{ Str::slug($product->name, '-') }}.html" style="display: block;">
+                                    <span class ="img--hover"></span> 
+                                    <img src="{{ $product->thumb }}" alt="{{ $product->name }}">
+                                </a>
+                                <p class="text-sale">Sale</p>
+                            </div>
+                            
+                            <div class="product-fruits__infos">
+                                <h2 class="tilte-name-product-t">{{ $product->name }}</h2>
+                                <div>
+                                    <input type="hidden" class="mtext-104 cl3 txt-center num-product" type="number"
+                                    name="num_product" value="1">
+                                    <span class="price-new">{!!  \App\Helpers\Helper::price($product->price, $product->price_sale)  !!} Vnđ</span>
+                                    @auth
+                                        <button type="submit" class="button-add-product button-add-product btn-add-cart button-add-product--view">Cho vào giỏ</button>
+                                    @endauth
+                                    <span class="price-old">{{ number_format($product->price) }} Vnđ</span>
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

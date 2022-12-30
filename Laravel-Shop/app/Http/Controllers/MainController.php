@@ -30,7 +30,8 @@ class MainController extends Controller
            'sliders' => $this->slider->show(),
            'menus' => $this->menu->show(),
            'menus1' => $this->menu->show1(),
-           'products' => $this->product->get()
+           'products' => $this->product->get(),
+           'productsGG' => $this->product->getGG()
         ]);
     }
 

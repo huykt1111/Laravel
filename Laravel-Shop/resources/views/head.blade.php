@@ -41,7 +41,8 @@
 	<link rel="stylesheet" type="text/css" href="/template/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/template/css/login.css">
 	<link rel="stylesheet" type="text/css" href="/template/css/jquery-ui.min.css">
-	<link rel="stylesheet" type="text/css" href="/template/js/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="/template/css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="/template/css/owl.theme.default.min.css">
 	<link rel="stylesheet" type="text/css" href="/template/css/all.css">
 <!--===============================================================================================-->
 	<meta name="csrf-token" content="{{ csrf_token() }}">

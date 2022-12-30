@@ -746,7 +746,7 @@ h2.tilte-name-product {
     top: -253px;
 }
 #product-sale-slider .owl-nav {
-    top: -210px;
+    top: -240px;
 }
 
 
@@ -2325,6 +2325,8 @@ p.text-sale {
     top: 0;
     height: 100%;
     transition: all 0.5s;
+    right: 0;
+    left: 0;
 }
 .col-product__item:hover .img--hover{ 
     opacity: 0.4;
