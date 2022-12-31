@@ -92,9 +92,12 @@
                             {{ $title }}
                         </h4>
 
-                        <div class="mtext-106 cl2" style="width: 100%; padding: 20px; background: linear-gradient(100deg, #ed1b36, #f1975f); border-radius: 8px; margin-bottom: 30px;">
-							<span style=" color: #fff; font-weight: 600; font-size: 24px; padding-right: 15px;">{!! \App\Helpers\Helper::price($product->price, $product->price_sale) !!} Vnđ</span>
-						</div>
+                        <div class="product-detail-main__price">
+                            <span class="product-detail-main__price-new">{!! \App\Helpers\Helper::price($product->price, $product->price_sale) !!} Vnđ</span>
+                            @if ($product->price_sale != 0)
+                            <span class="product-detail-price__old">{{ number_format($product->price) }} Vnđ</span>
+                            @endif
+                        </div>
 
                         <p class="stext-102 cl3 p-t-23">
                             {{ $product->description }}

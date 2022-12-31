@@ -103,7 +103,7 @@
         </div>
     </section>
 
-    Deal
+    <!-- Deal -->
     <section id="product-sale">
         <div class="container">
             <div class="product-sale-top">
