@@ -48,4 +48,20 @@ class ProductService
             ->limit(8)
             ->get();
     }
+
+    public function click()
+    {
+        return Product::select('id', 'name', 'price', 'price_sale', 'thumb')
+            ->where('active', 1)
+            ->orderByDesc('click')
+            ->limit(8)
+            ->get();
+    }
+
+    public function update_click($id)
+    {
+        $product = Product::find($id);
+        $product->click = $product->click + 1;
+        $product->save();
+    }
 }

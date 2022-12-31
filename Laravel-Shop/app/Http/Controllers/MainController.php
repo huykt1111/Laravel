@@ -31,7 +31,8 @@ class MainController extends Controller
            'menus' => $this->menu->show(),
            'menus1' => $this->menu->show1(),
            'products' => $this->product->get(),
-           'productsGG' => $this->product->getGG()
+           'productsGG' => $this->product->getGG(),
+           'productsClick' => $this->product->click(),
         ]);
     }
 

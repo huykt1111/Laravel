@@ -16,6 +16,7 @@ class ProductController extends Controller
 
     public function index($id = '', $slug = '')
     {
+        $this->productService->update_click($id);
         $product = $this->productService->show($id);
         $productsMore = $this->productService->more($id);
 
