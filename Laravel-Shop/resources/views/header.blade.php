@@ -27,7 +27,11 @@
                             <a href="{{ route('contact') }}">Liên hệ</a>
                         </li>
                         @auth
-                        <li style="margin-right: -20px;"><img src="{{ Auth::user()->avatar }}" style="border-radius: 50%; height: auto; width: 2.1rem;" class="img-circle elevation-2" alt="User Image"></li>
+                        
+                        @if (Auth::user()->avatar)
+                        <li style="margin-right: -20px;">
+                            <img src="{{ Auth::user()->avatar }}" style="border-radius: 50%; height: auto; width: 2.1rem;" class="img-circle elevation-2" alt="User Image"></li>
+                        @endif
                         <li>
                             <div class="dropdown">
                                 
