@@ -26,6 +26,13 @@ class MenuController extends Controller
         ]);
     }
     
+    public function store(CreateFormRequest $request)
+    {
+        $this->menuService->create($request);
+
+        return redirect()->back();
+    }
+    
     public function index()
     {
         return view('admin.menu.list',[
