@@ -14,11 +14,12 @@ class ProductController extends Controller
         $this->productService = $productService;
     }
 
-    public function index($id = '', $slug = '')
+    public function index($menuid = '', $id = '', $slug = '')
     {
         $this->productService->update_click($id);
         $product = $this->productService->show($id);
-        $productsMore = $this->productService->more($id);
+        // $productsMore = $this->productService->more($id);
+        $productsMore = $this->productService->moremn($menuid);
 
         return view('products.content', [
             'title' => $product->name,

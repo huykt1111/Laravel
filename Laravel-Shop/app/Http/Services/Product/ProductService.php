@@ -10,7 +10,7 @@ class ProductService
 
     public function get($page = null)
     {
-        return Product::select('id','name','price','price_sale','thumb')
+        return Product::select('id','name','price','price_sale','thumb','menu_id')
         ->orderByDesc('id')
         ->when($page != null, function($query) use ($page) {
             $query->offset($page * self::LIMIT);
@@ -21,7 +21,7 @@ class ProductService
 
     public function getGG($page = null)
     {
-        return Product::select('id','name','price','price_sale','thumb')
+        return Product::select('id','name','price','price_sale','thumb','menu_id')
         ->where('price_sale','!=',0)
         ->orderByDesc('id')
         ->when($page != null, function($query) use ($page) {
@@ -41,7 +41,7 @@ class ProductService
 
     public function more($id)
     {
-        return Product::select('id', 'name', 'price', 'price_sale', 'thumb')
+        return Product::select('id', 'name', 'price', 'price_sale', 'thumb','menu_id')
             ->where('active', 1)
             ->where('id', '!=', $id)
             ->orderByDesc('id')
@@ -49,9 +49,19 @@ class ProductService
             ->get();
     }
 
+    public function moremn($menuid)
+    {
+        return Product::select('id', 'name', 'price', 'price_sale', 'thumb', 'menu_id')
+            ->where('active', 1)
+            ->where('menu_id', $menuid)
+            ->orderByDesc('id')
+            ->limit(8)
+            ->get();
+    }
+
     public function click()
     {
-        return Product::select('id', 'name', 'price', 'price_sale', 'thumb')
+        return Product::select('id', 'name', 'price', 'price_sale', 'thumb','menu_id')
             ->where('active', 1)
             ->orderByDesc('click')
             ->limit(8)

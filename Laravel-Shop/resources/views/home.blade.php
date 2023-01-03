@@ -179,7 +179,7 @@
                                 </a>
                             </div>
                             <div class="product-img">
-                                <a href="/san-pham/{{ $product->id }}-{{ Str::slug($product->name, '-') }}.html" style="display: block;">
+                                <a href="/san-pham/{{ $product->menu_id }}-{{ $product->id }}-{{ Str::slug($product->name, '-') }}.html" style="display: block;">
                                     <span class ="img--hover"></span> 
                                     <img src="{{ $product->thumb }}" alt="{{ $product->name }}">
                                 </a>
@@ -229,7 +229,7 @@
                                     </a>
                                 </div>
                                 <div class="product-img">
-                                    <a href="/san-pham/{{ $product->id }}-{{ Str::slug($product->name, '-') }}.html">
+                                    <a href="/san-pham/{{ $product->menu_id }}-{{ $product->id }}-{{ Str::slug($product->name, '-') }}.html">
                                         <span class="img--hover"></span> 
                                         <img src="{{ $product->thumb }}" alt="{{ $product->name }}">
                                     </a>

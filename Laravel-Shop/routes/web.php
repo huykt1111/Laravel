@@ -83,7 +83,7 @@ Route::get('/', [MainController::class, 'index'])->name('home');
 Route::post('/services/load-product', [MainController::class, 'loadProduct']);
 
 Route::get('danh-muc/{id}-{slug}.html',[\App\Http\Controllers\MenuController::class, 'index']);
-Route::get('san-pham/{id}-{slug}.html',[\App\Http\Controllers\ProductController::class, 'index']);
+Route::get('san-pham/{menuid}-{id}-{slug}.html',[\App\Http\Controllers\ProductController::class, 'index']);
 
 Route::post('add-cart', [App\Http\Controllers\CartController::class, 'index']);
 Route::get('carts', [App\Http\Controllers\CartController::class, 'show']);

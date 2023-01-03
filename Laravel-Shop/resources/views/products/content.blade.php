@@ -349,7 +349,7 @@
         <div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
 
             <span class="stext-107 cl6 p-lr-25">
-				Categories: {{ $product->menu->name }}
+				Loại sản phẩm: {{ $product->menu->name }}
 			</span>
         </div>
     </section>
@@ -361,7 +361,6 @@
                     Những sản phẩm liên quan
                 </h3>
             </div>
-
             @include('products.list')
         </div>
     </section>
