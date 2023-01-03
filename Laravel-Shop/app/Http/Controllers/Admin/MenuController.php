@@ -18,6 +18,14 @@ class MenuController extends Controller
         $this->menuService = $menuService;
     }
 
+    public function create()
+    {
+        return view('admin.menu.add',[
+            'title' => 'Thêm danh mục mới',
+            'menus' => $this->menuService->getParent()
+        ]);
+    }
+    
     public function index()
     {
         return view('admin.menu.list',[
