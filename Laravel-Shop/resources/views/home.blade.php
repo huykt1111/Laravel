@@ -259,17 +259,13 @@
     <!-- Product -->
     <section class="bg0 p-t-23 p-b-140">
         <div class="container">
-            <div class="p-b-10">
-                <h3 class="ltext-103 cl5">
-                    Tổng quan về sản phẩm
-                </h3>
-            </div>
-
-            <div class="flex-w flex-sb-m p-b-52">
-                <div class="flex-w flex-l-m filter-tope-group m-tb-10">
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-                        Tất cả sản phẩm
-                    </button>
+            
+            <div class="populator__head">
+                <div>
+                    <h2 class="populator__head-title">
+                        <a href="">Tổng quan về sản phẩm</a>
+                    </h2>
+                    <p class="populator__head-desc">Tất cả sản phẩm</p>
                 </div>
             </div>
 
