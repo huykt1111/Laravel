@@ -113,3 +113,32 @@ class CartService
     {
         $productId = array_keys($carts);
         $products = Product::select('id', 'name', 'price', 'price_sale', 'thumb')
+            ->where('active', 1)
+            ->whereIn('id', $productId)
+            ->get();
+
+        $data = [];
+        foreach ($products as $product) {
+            $data[] = [
+                'customer_id' => $customer_id,
+                'product_id' => $product->id,
+                'pty'   => $carts[$product->id],
+                'price' => $product->price_sale != 0 ? $product->price_sale : $product->price
+            ];
+        }
+
+        return Cart::insert($data);
+    }
+
+    public function getCustomer()
+    {
+        return Customer::orderByDesc('id')->paginate(15);
+    }
+
+    public function getProductForCart($customer)
+    {
+        return $customer->carts()->with(['product' => function ($query) {
+            $query->select('id', 'name', 'thumb');
+        }])->get();
+    }
+}
