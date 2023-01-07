@@ -35,7 +35,7 @@
                                 <li style="margin-right: -20px;">
                                     <img src="{{ Auth::user()->avatar }}"
                                         style="border-radius: 50%; height: auto; width: 2.1rem;"
-                                        class="img-circle elevation-2" alt="User Image">
+                                        class="img-circle elevation-2" alt="">
                                 </li>
                             @endif
                             <li>
@@ -182,11 +182,11 @@
                 <img src="/template/images/icons/icon-close2.png" alt="CLOSE">
             </button>
 
-            <form class="wrap-search-header flex-w p-l-15">
+            <form class="wrap-search-header flex-w p-l-15" method="get" action="{{ route('search') }}">
                 <button class="flex-c-m trans-04">
                     <i class="zmdi zmdi-search"></i>
                 </button>
-                <input class="plh3" type="text" name="search" placeholder="Search...">
+                <input class="plh3" type="text" name="key" placeholder="Tìm kiếm...">
             </form>
         </div>
     </div>

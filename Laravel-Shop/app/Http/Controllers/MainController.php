@@ -9,6 +9,7 @@ use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Product\ProductService;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Product;
 
 class MainController extends Controller
 {
@@ -34,6 +35,15 @@ class MainController extends Controller
            'productsGG' => $this->product->getGG(),
            'productsClick' => $this->product->click(),
         ]);
+    }
+
+    public function getSearch(Request $request)
+    {
+        $products = Product::where('name','like','%'.$request->key.'%')
+                            ->orWhere('price',$request->key)
+                            ->get();
+
+        return view('search', compact('products'),['title' => 'Tìm kiếm']);
     }
 
     public function loadProduct(Request $request)

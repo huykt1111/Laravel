@@ -93,9 +93,15 @@ class MenuService
             $query->orderBy('price', $request->input('price'));
         }
 
+        if ($request->input('price100')) {
+            $query->where('price', '<=', $request->input('price100'));
+        }
+
+
         return $query
             ->orderByDesc('id')
             ->paginate(12)
             ->withQueryString();
     }
+
 }

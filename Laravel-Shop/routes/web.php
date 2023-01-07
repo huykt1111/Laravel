@@ -80,6 +80,7 @@ Route::get('login/github', [\App\Http\Controllers\SocialController::class, 'redi
 Route::get('login/github/callback', [\App\Http\Controllers\SocialController::class, 'handleGithubCallback']);
 
 Route::get('/', [MainController::class, 'index'])->name('home');
+Route::get('search', [MainController::class, 'getSearch'])->name('search');
 Route::post('/services/load-product', [MainController::class, 'loadProduct']);
 
 Route::get('danh-muc/{id}-{slug}.html',[\App\Http\Controllers\MenuController::class, 'index']);
