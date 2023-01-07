@@ -357,8 +357,8 @@
     <section class="sec-relate-product bg0 p-t-45 p-b-105">
         <div class="container">
             <div class="p-b-45">    
-                <h3 class="ltext-106 cl5 txt-center">
-                    Những sản phẩm liên quan
+                <h3 class="ltext-106 cl5 txt-center" style="font-family: Arial, sans-serif !important; color:var(cl-">
+                    NHỮNG SẢN PHẨN LIÊN QUAN
                 </h3>
             </div>
             @include('products.list')

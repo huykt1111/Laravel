@@ -186,7 +186,7 @@
                 <button class="flex-c-m trans-04">
                     <i class="zmdi zmdi-search"></i>
                 </button>
-                <input class="plh3" type="text" name="key" placeholder="Tìm kiếm...">
+                <input class="plh3" type="text" name="key" placeholder="Tìm kiếm..." style="font-family: Arial, sans-serif !important; font-size: 20px;">
             </form>
         </div>
     </div>
